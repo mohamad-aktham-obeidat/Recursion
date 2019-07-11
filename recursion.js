@@ -247,13 +247,11 @@ mirror("maDrasa") => "asarDam"
 */
 
 function mirror(str) {
-  var stringLength = str.length - 1;
-  if (stringLength === 0) {
+
+  if (str.length === 0) {
     return "";
   }
-  var slice = str.slice(stringLength, 0);
-  var result = slice
-  return result;
+  return str[str.length - 1] + "" + mirror(str.slice(0, -1));
 }
 console.log(mirror("Obeidat"));
 /*
@@ -269,7 +267,14 @@ mirrorCaseAlso("sChOol") => "LOoHcS"
 mirrorCaseAlso("THOR") => "roht"
 mirrorCaseAlso("BaBa") => "AbAb"
 */
+function mirrorCaseAlso(str) {
 
+  if (str.length === 0) {
+    return "";
+  }
+  if(str.length-1)
+}
+console.log(mirrorCaseAlso("Obeidat"));
 /*
 14
 Write a function called repeatChar
