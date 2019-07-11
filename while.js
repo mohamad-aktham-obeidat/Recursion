@@ -184,16 +184,16 @@ numberBetweenUs(2,8) => "3, 4, 5, 6, 7"
 numberBetweenUs(1,3) => "2"
 
 */
-function numberBetweenUs(num1, num2){
-    var result = '"' ;
-    while (num1 < num2-1) {
-        result = result + " " + (num1+1) + " ,";
-        num1++; 
+function numberBetweenUs(num1, num2) {
+    var result = '"';
+    while (num1 < num2 - 1) {
+        result = result + " " + (num1 + 1) + " ,";
+        num1++;
     }
-    return result.slice(0,-1)+'"' ;
+    return result.slice(0, -1) + '"';
 }
-console.log(numberBetweenUs(2,8));
-console.log(numberBetweenUs(1,3));
+console.log(numberBetweenUs(2, 8));
+console.log(numberBetweenUs(1, 3));
 /*
 9
 Write a function called countDown
@@ -215,12 +215,12 @@ countDown(7)
 => "7, 6, 5, 4, 3, 2, 1, done"
 */
 function countDown(number) {
-    var result = '"' ;
-    while (number >0) {
+    var result = '"';
+    while (number > 0) {
         result = result + " " + (number) + " ,";
-        number--; 
+        number--;
     }
-    return result +" done"+'"' ;
+    return result + " done" + '"';
 }
 console.log(countDown(5));
 console.log(countDown(2));
@@ -240,15 +240,15 @@ multiplication2(7,6) =>  42
 */
 function multiplication2(number1, number2) {
     var sum = number1;
-    while (number2>1) {
-        sum += number1; 
-        number2--;       
-    }    
+    while (number2 > 1) {
+        sum += number1;
+        number2--;
+    }
     return sum;
 }
-console.log(multiplication2(5,4));
-console.log(multiplication2(2,8));
-console.log(multiplication2(7,6));
+console.log(multiplication2(5, 4));
+console.log(multiplication2(2, 8));
+console.log(multiplication2(7, 6));
 /*
 11
 Write a function called mod2
@@ -263,14 +263,14 @@ mod2(7,4) => 3
 */
 function mod2(number1, number2) {
     while (number1 > number2) {
-       number1 =number1 -number2;
-       
+        number1 = number1 - number2;
+
     }
     return number1;
 }
-console.log(mod2(5,4));
-console.log(mod2(2,8));
-console.log(mod2(7,4));
+console.log(mod2(5, 4));
+console.log(mod2(2, 8));
+console.log(mod2(7, 4));
 /*
 12
 Write a function called repeatChar
@@ -290,13 +290,22 @@ repeatChar("School","s") => 1
 try more case by yourself
 */
 function repeatChar(string, s) {
-    var counter=0;
-    while(string.length>0){
-        
+
+    var counter = 0;
+    var i = 0;
+
+    while(i<=string.length-1){
+        if (string[i].toUpperCase() === s[0].toUpperCase()) {
+            counter++
+        }
+        i++;
     }
+    return counter;
 }
 
-
+console.log(repeatChar("schOol", "o"));
+console.log(repeatChar("school", "a"));
+console.log(repeatChar("school", "s"));
 
 
 
