@@ -272,7 +272,6 @@ function mirrorCaseAlso(str) {
   if (str.length === 0) {
     return "";
   }
-  if(str.length-1)
 }
 console.log(mirrorCaseAlso("Obeidat"));
 /*

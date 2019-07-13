@@ -217,7 +217,7 @@ countDown(7)
 function countDown(number) {
     var result = '"';
     while (number > 0) {
-        result = result + " " + (number) + " ,";
+        result = result + " " + (number) + ",";
         number--;
     }
     return result + " done" + '"';
@@ -294,7 +294,7 @@ function repeatChar(string, s) {
     var counter = 0;
     var i = 0;
 
-    while(i<=string.length-1){
+    while (i <= string.length - 1) {
         if (string[i].toUpperCase() === s[0].toUpperCase()) {
             counter++
         }
@@ -341,6 +341,26 @@ fibon(n): 1 1 2 3 5 8 13 21
 n:        0 1 2 3 4 5  6  7
 */
 
+function fibon(number) {
+
+    var num1 = 1;
+    var num2 = 1;
+    var sumOfPrevTwo = 0;
+    if (number === 0 || number === 1) {
+        return 1;
+    }
+
+    while (number > 1) {
+        sumOfPrevTwo = num1 + num2;
+        num2 = num1;
+        num1 = sumOfPrevTwo;
+        number--;
+    }
+    return sumOfPrevTwo;
+}
+
+console.log(fibon(7))
+console.log(fibon(6))
 
 /*
 2
@@ -359,8 +379,17 @@ mirror("maDrasa") => "asarDam"
 
 */
 
+function mirror(str) {
+    var leng = str.length - 1;
+    var reverse = "";
+    while (leng >= 0) {
 
-
+        reverse = reverse + str[leng];
+        leng--;
+    }
+    return reverse;
+}
+console.log(mirror("Obeidat"));
 /*
 3
 Write a function called mirrorCaseAlso
@@ -380,7 +409,21 @@ mirrorCaseAlso("BaBa") => "AbAb"
 
 */
 
-
+function mirrorCaseAlso(string) {
+    var leng = string.length - 1;
+    var reverse = "";
+    var char = 'a';
+    while (leng >= 0) {
+        if (string[leng] < char) {
+            reverse = reverse + string[leng].toLowerCase();
+        } else {
+            reverse = reverse + string[leng].toUpperCase();
+        }
+        leng--;
+    }
+    return reverse;
+}
+console.log(mirrorCaseAlso("MoHaMaD"));
 
 /*
 4
@@ -402,6 +445,22 @@ repeatChar2("School","S") => 1
 try more case by yourself
 */
 
+function repeatChar2(string, char) {
+    var leng = string.length - 1;
+    var charCounter;
+    var i = 0;
+    while (i < leng) {
+
+        if (string[i].toUpperCase() === char[0].toUpperCase()) {
+            charCounter++
+        } else if (string[i].toLowerCase() === char[0].toLowerCase()) {
+            charCounter++;
+        }
+        i++;
+    }
+    return charCounter;
+}
+console.log(repeatChar2("MoHaMaD", "M"));
 
 /*
 5
